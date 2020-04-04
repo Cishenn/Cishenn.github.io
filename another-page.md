@@ -6,6 +6,6 @@ layout: default
 
 _yay_
 
-[_DIGITAL LOGIC REVIEW_](./index.html).
+[_DIGITAL LOGIC REVIEW_](./digital-logic.html).
 
 [back](./)
