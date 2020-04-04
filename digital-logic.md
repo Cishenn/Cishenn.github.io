@@ -10,8 +10,8 @@ layout: default
 3.  一定要注重老师所讲过的重点! (大题有几个固定的题型, 将近20%~30%的分数, 只要稍加练习即可会做)
 
 ## 知乎篇: 
-[补考心理准备](https://www.zhihu.com/question/48292692/answer/110105549)
-[补考怎么过](https://www.zhihu.com/question/310607158)
+*   [补考心理准备](https://www.zhihu.com/question/48292692/answer/110105549)
+*   [补考怎么过](https://www.zhihu.com/question/310607158)
 
 
 ## 哔哩哔哩篇:
