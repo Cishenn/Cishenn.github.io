@@ -1,98 +1,109 @@
-# Minimalism
+# The Architect theme
 
-[![Build Status](https://travis-ci.org/showzeng/Minimalism.svg?branch=master)](https://travis-ci.org/showzeng/Minimalism)
-[![Jekyll Version](https://img.shields.io/badge/Jekyll-3.8-blue.svg)](https://jekyllrb.com/)
-[![Gem Version](https://badge.fury.io/rb/jekyll-theme-minimalism.svg)](https://badge.fury.io/rb/jekyll-theme-minimalism)
-[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg?style=popout)](./LICENSE.txt)
+[![Build Status](https://travis-ci.org/pages-themes/architect.svg?branch=master)](https://travis-ci.org/pages-themes/architect) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-architect.svg)](https://badge.fury.io/rb/jekyll-theme-architect)
 
-![screenshot](./docs/screenshot.png)
+*Architect is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/architect), or even [use it today](#usage).*
 
-Minimalism 是一款基于 Jekyll 为极简主义者打造的极简主题。你可以访问 [我的博客][blog] 或者 [主题 demo][demo] 来预览一下。
+![Thumbnail of Architect](thumbnail.png)
 
-## 特性
+## Usage
 
-**V0.1.x**
-- 这款主题采用响应式布局，对各大主流浏览器做了兼容，对移动客户端做了适配
-- 支持 RSS 订阅
-- SEO 优化
-- 文章默认采用 [CC BY-NC-ND 4.0][license] 协议对著作权进行保护，支持 emoji 表情
-- 支持禁止复制、禁止右键菜单、复制附带版权声明等多种功能
-- 支持文章图片查看大图
-- 支持文章打赏 (微信、支付宝)
-- 支持评论功能 (目前支持来必力、gitment)
-- 支持站点统计 (目前支持谷歌统计、百度统计、友盟 cnzz 统计)
-- 最后且最重要的当然还是对博客文章极度的阅读体验优化
+To use the Architect theme:
 
-## 安装
+1. Add the following to your site's `_config.yml`:
 
-在你的 `Gemfile` 文件中加入下面这一行:
+    ```yml
+    theme: jekyll-theme-architect
+    ```
 
-```ruby
-gem "jekyll-theme-minimalism"
+2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+
+    ```ruby
+    gem "github-pages", group: :jekyll_plugins
+    ```
+
+## Customizing
+
+### Configuration variables
+
+Architect will respect the following variables, if set in your site's `_config.yml`:
+
+```yml
+title: [The title of your site]
+description: [A short description of your site's purpose]
 ```
 
-然后使用 bundle 执行安装:
+Additionally, you may choose to set the following optional variables:
 
-    $ bundle install
-
-或者你也可以手动下载安装:
-
-    $ gem install jekyll-theme-minimalism
-
-在你的配置文件 `_config.yml` 中修改启用主题 (本地预览):
-
-```yaml
-theme: jekyll-theme-minimalism
+```yml
+show_downloads: ["true" or "false" to indicate whether to provide a download URL]
+google_analytics: [Your Google Analytics tracking ID]
 ```
 
-使用 GitHub pages 发布时，在你的配置文件 `_config.yml` 中修改启用远程主题:
+### Stylesheet
 
-```yaml
-# theme: jekyll-theme-minimalism
-remote_theme: showzeng/Minimalism
-```
+If you'd like to add your own custom styles:
 
-## 使用
+1. Create a file called `/assets/css/style.scss` in your site
+2. Add the following content to the top of the file, exactly as shown:
+    ```scss
+    ---
+    ---
 
-移步 [wiki] 或者查看 [demo]。
+    @import "{{ site.theme }}";
+    ```
+3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
 
-## 支持
+*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
 
-如果你觉得这个主题还不错，欢迎 star 或使用。你也可以自由的 fork，基于本主题打造你自己的主题，当然，希望最好是能署名或提及本博客主题。
+### Layouts
 
-此外你有什么好的建议、需求或者是碰到什么问题，欢迎提交 [issue]，本主题还会不断完善。
+If you'd like to change the theme's HTML layout:
 
-## 致谢
+1. [Copy the original template](https://github.com/pages-themes/architect/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
+2. Create a file called `/_layouts/default.html` in your site
+3. Paste the default layout content copied in the first step
+4. Customize the layout as you'd like
 
-博客主题文章的文字颜色及部分排版受凯哥 [HenCoder] 网站的启发，打赏样式受 [写代码的猴子的博客][Jaeger] 的启发，特此感谢。
+### Overriding GitHub-generated URLs
 
-文章图片查看大图由 [zooming](https://github.com/kingdido999/zooming) 提供支持，特此感谢。
+Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
 
-## Todo
+1. Look at [the template source](https://github.com/pages-themes/architect/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
+2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
+    ```yml
+    github:
+      zip_url: http://example.com/download.zip
+      another_url: another value
+    ```
+3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
 
-- [ ] Multilingual support (多语言支持)
-- [ ] Toc (文章索引目录)
-- [ ] Math support with LaTeX (数学公式支持)
+*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
 
-## Change log
+For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
 
-查看 [版本更新日志][Change Log]
+## Roadmap
 
-## 打赏
+See the [open issues](https://github.com/pages-themes/architect/issues) for a list of proposed features (and known issues).
 
-如果主题对你有帮助，并帮你节省了一些折腾的时间，可以考虑打赏，这是对我所做工作的最大肯定。
+## Project philosophy
 
-![reward.png](./docs/reward.webp)
+The Architect theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
 
-## License
+## Contributing
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Interested in contributing to Architect? We'd love your help. Architect is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
 
-[blog]: https://showzeng.itscoder.com
-[demo]: https://showzeng.github.io
-[license]: https://creativecommons.org/licenses/by-nc-nd/4.0/
-[wiki]: https://github.com/showzeng/Minimalism/wiki
-[issue]: https://github.com/showzeng/Minimalism/issues/new
-[Change Log]: https://github.com/showzeng/Minimalism/wiki/Change-Log
-[HenCoder]: https://hencoder.com/
-[Jaeger]: https://jaeger.itscoder.com/
+### Previewing the theme locally
+
+If you'd like to preview the theme locally (for example, in the process of proposing a change):
+
+1. Clone down the theme's repository (`git clone https://github.com/pages-themes/architect`)
+2. `cd` into the theme's directory
+3. Run `script/bootstrap` to install the necessary dependencies
+4. Run `bundle exec jekyll serve` to start the preview server
+5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+
+### Running tests
+
+The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` one before the test script will work.
