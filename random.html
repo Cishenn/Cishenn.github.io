@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="144x144" href="/Cishenn.github.io/assets/images/logo.jpg" />
-    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="/Cishenn.github.io/assets/images/logo.jpg" />
+    <link rel="shortcut icon" href="assets/images/logo.jpg" />
     <title>课堂随机课文背诵</title>
 </head>
 
 <body>
     <div id="display">
-
+        <h1 value="chosed"></h1>
     </div>
 
     <div class="random">
@@ -19,22 +18,51 @@
     </div>
 
     <div class="btn">
-        <button>开始摇号</button>
+        <button onclick="clickIt()">开始摇号</button>
     </div>
 </body>
 
-<script>
+<script type="text/javascript">
     var sum = 49;
-    var stu = new Array(sum + 1);
+    var stu = new Array(sum);
     for (s in stu) {
         s = true;
     }
 
     var total = 15;
     var title = new Array(
-        "",
-
+        "1) Module 1 Unit 1 Nice to meet you.",
+        "2) Module 1 Unit 2 I’m Wang Lingling and I’m thirteen years old.",
+        "3) Module 1 Unit 3 Language in use.",
+        "4) Module 2 Unit 1 Is this your mum?",
+        "5) Module 2 Unit 2 These are my parents.",
+        "6) Module 2 Unit 3 Language in use.",
+        "7) Module 3 Unit 1 There are thirty students in my class.",
+        "8) Module 3 Unit 2 The library is on the left of the playground.",
+        "9) Module 3 Unit 3 Language in use.",
+        "10) Module 4 Unit 1 We’ve got lots of apples.",
+        "11) Module 4 Unit 2 Is your food and drink healthy?",
+        "12) Module 4 Unit 3 Language in use.",
+        "13) Module 5 Unit 1 I love history.",
+        "14) Module 5 Unit 2 We start work at nine o’clock.",
+        "15) Module 5 Unit 3 Language in use.",
     );
+
+
+
+    function clickIt() {
+        console.log("click");
+        var stuIndex = Math.random() % sum;
+        while (stu[stuIndex] == false) {
+            stuIndex = Math.random() % sum;
+        }
+        stu[stuIndex] = false;
+
+        var titleIndex = Math.random() % total;
+        var chosed = title[titleIndex];
+        console.log(titleIndex);
+        document.getElementById("display").innerHTML = chosed;
+    }
 </script>
 <style>
     button {

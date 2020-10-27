@@ -7,5 +7,5 @@ layout: default
 _yay_
 
 [_DIGITAL LOGIC REVIEW_](./digital-logic.html).
-
+[Course Random Recite](./random.html).
 [back](./)
