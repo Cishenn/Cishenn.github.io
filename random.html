@@ -16,9 +16,9 @@
         </div>
 
         <div id="display">
-            <h1>请第</h1>
-            <h1 id="chosed">0</h1>
-            <h1>号同学背诵</h1>
+            <h3>请第</h3>
+            <h3 id="chosed">X</h3>
+            <h3>号同学</h3>
             <h2 id="recite">English Time!</h2>
         </div>
 
@@ -68,9 +68,9 @@
         }
         ++cnt;
 
-        var stuIndex = Math.floor(sum * Math.random());
+        var stuIndex = Math.floor(sum * Math.random() + 1);
         while (stu[stuIndex] == false && cnt <= sum) {
-            stuIndex = Math.floor(Math.random() * sum);
+            stuIndex = Math.floor(Math.random() * sum + 1);
         }
         stu[stuIndex] = false;
         var titleIndex = Math.floor(Math.random() * total);
@@ -103,7 +103,7 @@
         border-radius: 10px 40px 40px 10px;
     }
     
-    h1 {
+    h3 {
         display: inline-block;
     }
     
