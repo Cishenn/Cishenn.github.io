@@ -9,22 +9,33 @@
 </head>
 
 <body>
-    <div id="display">
-        <h1 value="chosed"></h1>
-    </div>
+    <div id="all">
+        <div>
+            您已匹配
+            <span id="stuNum">0</span>位学生, 还剩下 <span id="stuNumRemain">49</span> 位学生
+        </div>
 
-    <div class="random">
+        <div id="display">
+            <h1>请第</h1>
+            <h1 id="chosed">0</h1>
+            <h1>号同学背诵</h1>
+            <h2 id="recite">English Time!</h2>
+        </div>
 
-    </div>
+        <div class="random">
 
-    <div class="btn">
-        <button onclick="clickIt()">开始摇号</button>
+        </div>
+
+        <div class="btn">
+            <button onclick="clickIt()">开始匹配</button>
+        </div>
     </div>
 </body>
 
 <script type="text/javascript">
     var sum = 49;
     var stu = new Array(sum);
+    var cnt = 0;
     for (s in stu) {
         s = true;
     }
@@ -51,17 +62,23 @@
 
 
     function clickIt() {
-        console.log("click");
-        var stuIndex = Math.random() % sum;
-        while (stu[stuIndex] == false) {
-            stuIndex = Math.random() % sum;
+        if (cnt >= sum) {
+            alert('没有学生可以匹配了!');
+            return;
+        }
+        ++cnt;
+
+        var stuIndex = Math.floor(sum * Math.random());
+        while (stu[stuIndex] == false && cnt <= sum) {
+            stuIndex = Math.floor(Math.random() * sum);
         }
         stu[stuIndex] = false;
+        var titleIndex = Math.floor(Math.random() * total);
 
-        var titleIndex = Math.random() % total;
-        var chosed = title[titleIndex];
-        console.log(titleIndex);
-        document.getElementById("display").innerHTML = chosed;
+        document.getElementById("recite").innerHTML = title[titleIndex];
+        document.getElementById("chosed").innerHTML = stuIndex;
+        document.getElementById("stuNum").innerHTML = cnt;
+        document.getElementById("stuNumRemain").innerHTML = sum - cnt;
     }
 </script>
 <style>
@@ -85,6 +102,13 @@
         border: solid 10px #4d4e53;
         border-radius: 10px 40px 40px 10px;
     }
-</style>
-
-</html>
+    
+    h1 {
+        display: inline-block;
+    }
+    
+    #all {
+        margin: 50px 50px;
+    }
+    
+    </html>
