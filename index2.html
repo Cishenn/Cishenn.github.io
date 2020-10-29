@@ -3,34 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/logo.jpg" />
-    <title>课堂随机课文背诵</title>
+    <title>CSS3实现的卡通文字动画DEMO演示</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-    <div id="all">
-        <div>
+
+    <div class="content">
+        <h2>
             您已匹配
             <span id="stuNum">0</span>位学生, 还剩下 <span id="stuNumRemain">49</span> 位学生
-        </div>
-
-        <div id="display">
-            <h3>请第</h3>
+        </h2>
+        <h2>
+            <span>
+			<h3>Please Student No.</h3>
             <h3 id="chosed">X</h3>
-            <h3>号同学</h3>
-            <h2 id="recite">English Time!</h2>
-        </div>
+			<h2 id="recite">English Time!</h2>
+			<div class="btn">
+                <button class="btnLeft" onclick="clickStu()">Who</button>
+                <button onclick="clickTitle()">Which</button>
+            </div>
+			</span>
 
-        <div class="random">
+        </h2>
 
-        </div>
-
-        <div class="btn">
-            <button onclick="clickIt()">开始匹配</button>
-        </div>
     </div>
+
+    <script src="js/script.js"></script>
+
 </body>
+<style>
+    button {
+        width: 200px;
+        padding: 8px;
+        background-color: #428bca;
+        border-color: #357ebd;
+        color: #fff;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        /* future proofing */
+        -khtml-border-radius: 10px;
+        /* for old Konqueror browsers
+*/
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+        font-size: 100%;
+        border: solid 10px #4d4e53;
+        border-radius: 10px 40px 40px 10px;
+        margin-top: 100px;
+        font-family: 'Megrim', cursive;
+    }
+    
+    .btnLeft {
+        border-radius: 40px 10px 10px 40px;
+    }
+    
+    h3 {
+        display: inline-block;
+    }
+    
+    #all {
+        margin: 50px 50px;
+    }
+</style>
 
 <script type="text/javascript">
     var sum = 49;
@@ -61,54 +103,26 @@
 
 
 
-    function clickIt() {
+    function clickStu() {
         if (cnt >= sum) {
             alert('没有学生可以匹配了!');
             return;
         }
         ++cnt;
-
         var stuIndex = Math.floor(sum * Math.random() + 1);
         while (stu[stuIndex] == false && cnt <= sum) {
             stuIndex = Math.floor(Math.random() * sum + 1);
         }
         stu[stuIndex] = false;
-        var titleIndex = Math.floor(Math.random() * total);
-
-        document.getElementById("recite").innerHTML = title[titleIndex];
         document.getElementById("chosed").innerHTML = stuIndex;
         document.getElementById("stuNum").innerHTML = cnt;
         document.getElementById("stuNumRemain").innerHTML = sum - cnt;
     }
+
+    function clickTitle() {
+        var titleIndex = Math.floor(Math.random() * total);
+        document.getElementById("recite").innerHTML = title[titleIndex];
+    }
 </script>
-<style>
-    button {
-        width: 200px;
-        padding: 8px;
-        background-color: #428bca;
-        border-color: #357ebd;
-        color: #fff;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        /* future proofing */
-        -khtml-border-radius: 10px;
-        /* for old Konqueror browsers */
-        text-align: center;
-        vertical-align: middle;
-        border: 1px solid transparent;
-        font-weight: 900;
-        font-size: 125%;
-        border: solid 10px #4d4e53;
-        border-radius: 10px 40px 40px 10px;
-    }
-    
-    h3 {
-        display: inline-block;
-    }
-    
-    #all {
-        margin: 50px 50px;
-    }
-    
-    </html>
+
+</html>
