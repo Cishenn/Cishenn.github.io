@@ -23,7 +23,7 @@
             <span>
 			<h3>Please Student No.</h3>
             <h3 id="chosed">X</h3>
-			<h2 id="recite">English Time!</h2>
+			<h2 id="recite">Happy English Time Right Now!</h2>
 			<div class="btn">
                 <button class="btnLeft" onclick="clickStu()">Who</button>
                 <button onclick="clickTitle()">Which</button>
@@ -115,9 +115,38 @@
             stuIndex = Math.floor(Math.random() * sum + 1);
         }
         stu[stuIndex] = false;
-        document.getElementById("chosed").innerHTML = stuIndex;
-        document.getElementById("stuNum").innerHTML = cnt;
-        document.getElementById("stuNumRemain").innerHTML = sum - cnt;
+
+        // buffer
+        for (i = 1; i < 140; i = i + 3) {
+            setTimeout(function() {
+                document.getElementById("chosed").style.color = 'red';
+                var tmp = Math.floor(Math.random() * sum + 1);
+                console.log("tmp" + tmp);
+                if (tmp < 10) {
+                    document.getElementById("chosed").innerHTML = '0' + tmp;
+                } else {
+                    document.getElementById("chosed").innerHTML = tmp;
+                }
+            }, i * 40);
+
+        }
+
+        setTimeout(function() {
+            if (stuIndex < 10) {
+                document.getElementById("chosed").innerHTML = '0' + stuIndex;
+                document.getElementById("chosed").style.color = 'yellow';
+            } else {
+                document.getElementById("chosed").innerHTML = stuIndex;
+                document.getElementById("chosed").style.color = 'yellow';
+            }
+            document.getElementById("chosed").style.color = 'yellow';
+            console.log("index" + stuIndex);
+
+            document.getElementById("stuNum").innerHTML = cnt;
+            document.getElementById("stuNumRemain").innerHTML = sum - cnt;
+        }, 6300);
+
+
     }
 
     function clickTitle() {
