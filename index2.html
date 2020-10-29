@@ -23,7 +23,7 @@
             <span>
 			<h3>Please Student No.</h3>
             <h3 id="chosed">X</h3>
-			<h2 id="recite">Happy English Time Right Now!</h2>
+			<h2 id="recite">Press Which to Chose a random Title</h2>
 			<div class="btn">
                 <button class="btnLeft" onclick="clickStu()">Who</button>
                 <button onclick="clickTitle()">Which</button>
@@ -109,6 +109,7 @@
             alert('没有学生可以匹配了!');
             return;
         }
+        document.getElementById("recite").innerHTML = "Press Which to Chose a random Title";
         ++cnt;
         var stuIndex = Math.floor(sum * Math.random() + 1);
         while (stu[stuIndex] == false && cnt <= sum) {
@@ -127,7 +128,7 @@
                 } else {
                     document.getElementById("chosed").innerHTML = tmp;
                 }
-            }, i * 40);
+            }, i * 15);
 
         }
 
@@ -144,7 +145,7 @@
 
             document.getElementById("stuNum").innerHTML = cnt;
             document.getElementById("stuNumRemain").innerHTML = sum - cnt;
-        }, 4300);
+        }, 1800);
 
 
     }
