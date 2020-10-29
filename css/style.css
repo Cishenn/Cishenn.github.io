@@ -35,7 +35,7 @@ h2 {
     color: var(--text);
     -webkit-text-stroke-color: var(--stroke);
     text-align: center;
-    font-family: 'Josefin Slab', cursive;
+    font-family: 'Acme', cursive;
     line-height: 1;
     white-space: nowrap;
     -webkit-text-stroke-width: 0px;

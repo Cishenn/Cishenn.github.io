@@ -59,7 +59,7 @@
         border: solid 10px #4d4e53;
         border-radius: 10px 40px 40px 10px;
         margin-top: 100px;
-        font-family: 'Megrim', cursive;
+        font-family: 'Acme', fantasy;
     }
     
     .btnLeft {
@@ -117,7 +117,7 @@
         stu[stuIndex] = false;
 
         // buffer
-        for (i = 1; i < 140; i = i + 3) {
+        for (i = 2; i < 100; i = i + 7) {
             setTimeout(function() {
                 document.getElementById("chosed").style.color = 'red';
                 var tmp = Math.floor(Math.random() * sum + 1);
@@ -144,7 +144,7 @@
 
             document.getElementById("stuNum").innerHTML = cnt;
             document.getElementById("stuNumRemain").innerHTML = sum - cnt;
-        }, 6300);
+        }, 4300);
 
 
     }
