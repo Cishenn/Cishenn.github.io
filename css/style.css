@@ -1,10 +1,10 @@
 :root {
     --stroke: #0A1C20;
-    --text: #FEDC0C;
+    --text: rgb(218, 21, 21);
     --bg: #6FBFD9;
     --duration: 1000ms;
     --easing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+} 
 
 html,
 body {
@@ -35,7 +35,7 @@ h2 {
     color: var(--text);
     -webkit-text-stroke-color: var(--stroke);
     text-align: center;
-    font-family: 'Acme', cursive;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     line-height: 1;
     white-space: nowrap;
     -webkit-text-stroke-width: 0px;
