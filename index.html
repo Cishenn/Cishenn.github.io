@@ -77,6 +77,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-design-pattern" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/07/design-pattern/" class="article-date">
+  <time class="dt-published" datetime="2021-04-06T16:05:02.000Z" itemprop="datePublished">2021-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/07/design-pattern/">设计模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>待复习填坑<br>Github:<br><a target="_blank" rel="noopener" href="https://github.com/Cishenn/designpattern">设计模式</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://cishenn.tree-digram.site/2021/04/07/design-pattern/" data-id="ckn67us0o0000e01efw4caym3" data-title="设计模式" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/" rel="tag">design&pattern</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-sort" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/06/sort/" class="article-date">
@@ -91,7 +132,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/06/sort/">sort</a>
+      <a class="p-name article-title" href="/2021/04/06/sort/">排序算法</a>
     </h1>
   
 
@@ -99,12 +140,19 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="快排优化"><a href="#快排优化" class="headerlink" title="快排优化:"></a>快排优化:</h4><p>三数取中<br>数据小插入排序<br>同值聚集<br>尾递归</p>
+        <h4 id="快排优化"><a href="#快排优化" class="headerlink" title="快排优化:"></a>快排优化:</h4><p>三数取中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> midOfThree(arr)&#123;</span><br><span class="line">        <span class="built_in">let</span> low = 0;</span><br><span class="line">        <span class="built_in">let</span> high = arr.length - 1;</span><br><span class="line">        <span class="built_in">let</span> mid = Math.floor((high + low) &gt;&gt; 1);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (arr[mid] &gt; arr[high])</span><br><span class="line">                [arr[mid], arr[high]] = [arr[high], arr[mid]];</span><br><span class="line">        <span class="keyword">if</span> (arr[low] &gt; arr[high])</span><br><span class="line">                [arr[low], arr[high]] = [arr[high], arr[low]];</span><br><span class="line">        <span class="keyword">if</span> (arr[mid] &gt; arr[low])</span><br><span class="line">                [arr[mid], arr[low]] = [arr[low], arr[mid]];</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">return</span> arr[low];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>较少数据(&lt;10)且基本有序可以插入排序</li>
+<li>同值聚集</li>
+<li>尾递归</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://cishenn.tree-digram.site/2021/04/06/sort/" data-id="ckn66jfcz0000kc1eev5665o9" data-title="sort" class="article-share-link">分享</a>
+      <a data-url="https://cishenn.tree-digram.site/2021/04/06/sort/" data-id="ckn66jfcz0000kc1eev5665o9" data-title="排序算法" class="article-share-link">分享</a>
       
       
       
@@ -200,7 +248,7 @@
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algor/" rel="tag">algor</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gossip/" rel="tag">gossip</a></li></ul>
 
     </footer>
   </div>
@@ -253,6 +301,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gossip/" rel="tag">gossip</a></li></ul>
+
     </footer>
   </div>
   
@@ -274,7 +324,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algor/" rel="tag">algor</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/" rel="tag">design&pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gossip/" rel="tag">gossip</a></li></ul>
     </div>
   </div>
 
@@ -284,7 +334,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/algor/" style="font-size: 10px;">algor</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design&pattern</a> <a href="/tags/gossip/" style="font-size: 20px;">gossip</a>
     </div>
   </div>
 
@@ -306,7 +356,11 @@
       <ul>
         
           <li>
-            <a href="/2021/04/06/sort/">sort</a>
+            <a href="/2021/04/07/design-pattern/">设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/06/sort/">排序算法</a>
           </li>
         
           <li>

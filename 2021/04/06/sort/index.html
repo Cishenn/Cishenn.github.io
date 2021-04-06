@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>sort | Cishenn&#39;s Page</title>
+  <title>排序算法 | Cishenn&#39;s Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="快排优化:三数取中数据小插入排序同值聚集尾递归">
+  <meta name="description" content="快排优化:三数取中 1234567891011121314function midOfThree(arr)&amp;#123;        let low &#x3D; 0;        let high &#x3D; arr.length - 1;        let mid &#x3D; Math.floor((high + low) &gt;&gt; 1);                if (arr[mid] &gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sort">
+<meta property="og:title" content="排序算法">
 <meta property="og:url" content="https://cishenn.tree-digram.site/2021/04/06/sort/index.html">
 <meta property="og:site_name" content="Cishenn&#39;s Page">
-<meta property="og:description" content="快排优化:三数取中数据小插入排序同值聚集尾递归">
+<meta property="og:description" content="快排优化:三数取中 1234567891011121314function midOfThree(arr)&amp;#123;        let low &#x3D; 0;        let high &#x3D; arr.length - 1;        let mid &#x3D; Math.floor((high + low) &gt;&gt; 1);                if (arr[mid] &gt;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-06T15:17:47.000Z">
-<meta property="article:modified_time" content="2021-04-06T15:31:13.620Z">
+<meta property="article:modified_time" content="2021-04-06T16:02:19.910Z">
 <meta property="article:author" content="Cishenn Lee">
 <meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary">
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      sort
+      排序算法
     </h1>
   
 
@@ -100,12 +100,19 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="快排优化"><a href="#快排优化" class="headerlink" title="快排优化:"></a>快排优化:</h4><p>三数取中<br>数据小插入排序<br>同值聚集<br>尾递归</p>
+        <h4 id="快排优化"><a href="#快排优化" class="headerlink" title="快排优化:"></a>快排优化:</h4><p>三数取中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> midOfThree(arr)&#123;</span><br><span class="line">        <span class="built_in">let</span> low = 0;</span><br><span class="line">        <span class="built_in">let</span> high = arr.length - 1;</span><br><span class="line">        <span class="built_in">let</span> mid = Math.floor((high + low) &gt;&gt; 1);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (arr[mid] &gt; arr[high])</span><br><span class="line">                [arr[mid], arr[high]] = [arr[high], arr[mid]];</span><br><span class="line">        <span class="keyword">if</span> (arr[low] &gt; arr[high])</span><br><span class="line">                [arr[low], arr[high]] = [arr[high], arr[low]];</span><br><span class="line">        <span class="keyword">if</span> (arr[mid] &gt; arr[low])</span><br><span class="line">                [arr[mid], arr[low]] = [arr[low], arr[mid]];</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">return</span> arr[low];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>较少数据(&lt;10)且基本有序可以插入排序</li>
+<li>同值聚集</li>
+<li>尾递归</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://cishenn.tree-digram.site/2021/04/06/sort/" data-id="ckn66jfcz0000kc1eev5665o9" data-title="sort" class="article-share-link">分享</a>
+      <a data-url="https://cishenn.tree-digram.site/2021/04/06/sort/" data-id="ckn66jfcz0000kc1eev5665o9" data-title="排序算法" class="article-share-link">分享</a>
       
       
       
@@ -116,6 +123,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2021/04/07/design-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          设计模式
+        
+      </div>
+    </a>
   
   
     <a href="/2021/04/06/asi-of-JS/" id="article-nav-older" class="article-nav-link-wrap">
@@ -140,7 +156,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algor/" rel="tag">algor</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/" rel="tag">design&pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gossip/" rel="tag">gossip</a></li></ul>
     </div>
   </div>
 
@@ -150,7 +166,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/algor/" style="font-size: 10px;">algor</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design&pattern</a> <a href="/tags/gossip/" style="font-size: 20px;">gossip</a>
     </div>
   </div>
 
@@ -172,7 +188,11 @@
       <ul>
         
           <li>
-            <a href="/2021/04/06/sort/">sort</a>
+            <a href="/2021/04/07/design-pattern/">设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/06/sort/">排序算法</a>
           </li>
         
           <li>
