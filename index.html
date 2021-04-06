@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/06/asi-of-JS/">asi-of-JS</a>
+      <a class="p-name article-title" href="/2021/04/06/asi-of-JS/">JS自动分号插入机制</a>
     </h1>
   
 
@@ -102,14 +102,18 @@
         <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>前两天一时兴起, 复习过一遍十大排序, 快排和堆排都过了, 没想到卡在冒泡上, 并且卡了两个晚上..<br>代码:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const arr=[1,2,8,5,1,7]</span><br><span class="line"><span class="keyword">function</span> bubble(arr)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> i=0; i&lt;arr.length-1; ++i)&#123;</span><br><span class="line">        <span class="built_in">let</span> flag=1</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">let</span> j=arr.length-1;j&gt;i;--j)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&lt;arr[j-1])&#123;</span><br><span class="line">                flag = 0</span><br><span class="line">                [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)</span><br><span class="line">            <span class="built_in">return</span> arr</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line">console.log(bubble(arr))</span><br></pre></td></tr></table></figure>
 
+<p>但是结构赋值换个书写方式逻辑就正确了, 如下三种方式是都可以的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> bubble(arr)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> i=0; i&lt;arr.length-1; ++i)&#123;</span><br><span class="line">        <span class="built_in">let</span> flag=1</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">let</span> j=arr.length-1;j&gt;i;--j)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&lt;arr[j-1])&#123;</span><br><span class="line">                flag = 0</span><br><span class="line">                // OK</span><br><span class="line">                // tmp=arr[j]</span><br><span class="line">                // arr[j]=arr[j-1]</span><br><span class="line">                // arr[j-1]=tmp</span><br><span class="line"></span><br><span class="line">                // OK</span><br><span class="line">                // const a =[arr[j-1], arr[j]];</span><br><span class="line">                // [arr[j], arr[j-1]] = a; </span><br><span class="line"></span><br><span class="line">                // OK</span><br><span class="line">                // const k = j - 1;</span><br><span class="line">                // [arr[j], arr[k]] = [arr[k], arr[j]];</span><br><span class="line">                </span><br><span class="line">                // Fail</span><br><span class="line">                // [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)</span><br><span class="line">            <span class="built_in">return</span> arr</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line">console.log(bubble(arr))</span><br></pre></td></tr></table></figure>
 
-<p>在使用解构赋值来交换a[j]和a[j-1]的时候, 没有语法错误, 但是排序逻辑出错.</p>
+<p>在使用解构赋值来交换a[j]和a[j-1]的时候, 没有语法错误, 但是排序逻辑出错, 想到后来感觉都是玄学问题..最后求助同学发现:<strong>只是一个简单的分号问题</strong></p>
 <p>因为JS无需加分号, 所以故意不加分号, 认为是语言特性的使用, 其实并没有了解全局</p>
+<p>由于JS语言分号可以不写的特性, 引发的<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fsjohnhuang/p/4154503.html">自动分号插入机制</a>问题</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一般来说，“(”、“[”、“/”、“+”、“-”，都会在上一行代码不加分号的情况下，与上一行代码相接，“++”、“–”在上下两行都不加分号的情况下，与下一行代码相接，如遇上了return才会在改行末尾加上分号。<br>-JS编码最好加分号-</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://cishenn.tree-digram.site/2021/04/06/asi-of-JS/" data-id="ckn64x1w100009s1ee5400uxd" data-title="asi-of-JS" class="article-share-link">分享</a>
+      <a data-url="https://cishenn.tree-digram.site/2021/04/06/asi-of-JS/" data-id="ckn64x1w100009s1ee5400uxd" data-title="JS自动分号插入机制" class="article-share-link">分享</a>
       
       
       
@@ -137,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/26/testpaper/">testpaper</a>
+      <a class="p-name article-title" href="/2021/03/26/testpaper/">我的个人博客</a>
     </h1>
   
 
@@ -146,11 +150,12 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h3 id="使用hexo生成第一个界面"><a href="#使用hexo生成第一个界面" class="headerlink" title="使用hexo生成第一个界面"></a>使用hexo生成第一个界面</h3><p>你好 HEXO!</p>
+<p>我的Github: <a target="_blank" rel="noopener" href="https://github.com/Cishenn">Cishenn</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://cishenn.tree-digram.site/2021/03/26/testpaper/" data-id="ckn64x1w800039s1efx6xacws" data-title="testpaper" class="article-share-link">分享</a>
+      <a data-url="https://cishenn.tree-digram.site/2021/03/26/testpaper/" data-id="ckn64x1w800039s1efx6xacws" data-title="我的个人博客" class="article-share-link">分享</a>
       
       
       
@@ -176,7 +181,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/26/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2021/03/26/hello-world/">Hexo使用</a>
     </h1>
   
 
@@ -184,7 +189,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -201,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://cishenn.tree-digram.site/2021/03/26/hello-world/" data-id="ckn64x1w500019s1e3v7o8f4s" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="https://cishenn.tree-digram.site/2021/03/26/hello-world/" data-id="ckn64x1w500019s1e3v7o8f4s" data-title="Hexo使用" class="article-share-link">分享</a>
       
       
       
@@ -258,15 +263,15 @@
       <ul>
         
           <li>
-            <a href="/2021/04/06/asi-of-JS/">asi-of-JS</a>
+            <a href="/2021/04/06/asi-of-JS/">JS自动分号插入机制</a>
           </li>
         
           <li>
-            <a href="/2021/03/26/testpaper/">testpaper</a>
+            <a href="/2021/03/26/testpaper/">我的个人博客</a>
           </li>
         
           <li>
-            <a href="/2021/03/26/hello-world/">Hello World</a>
+            <a href="/2021/03/26/hello-world/">Hexo使用</a>
           </li>
         
       </ul>
