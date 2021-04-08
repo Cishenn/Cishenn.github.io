@@ -324,7 +324,7 @@ button:active,
 input[type="submit"]:active,
 input[type="button"]:active,
 input[type="reset"]:active {
-	color: #757575;
+	color: #FF1493;
 	background-color: #e1e1e1;
 	background-repeat: repeat-x;
 	background-image: -moz-linear-gradient(top, #ebebeb, #e1e1e1);
@@ -408,7 +408,7 @@ img.wp-post-image {
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
-	color: #757575;
+	color: #FF1493;
 }
 img.wp-smiley,
 .rsswidget img {
@@ -543,7 +543,7 @@ img.wp-smiley,
 	overflow: hidden;
 }
 .author-description p {
-	color: #757575;
+	color: #FF1493;
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
@@ -590,7 +590,7 @@ a:hover {
 /* Backgroud image */
 #bg {
   background-image: url("images/body.jpg");
-  opacity: 0.6;
+  opacity: 1;
   background-color: #050a10;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -685,7 +685,7 @@ a:hover {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575;
+	color: #FF1493;
 }
 .header-image {
 	margin-top: 24px;
@@ -851,7 +851,7 @@ footer[role="contentinfo"] a:hover {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575;
+	color: #FF1493;
 }
 .comments-link a,
 .entry-meta a {
@@ -866,7 +866,7 @@ article.sticky .featured-post {
     /* Border Line for Special */
 	border-top: 1px solid rgba(0, 0, 0, 0.24);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.24);
-	color: #757575;
+	color: #FF1493;
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 3.692307692;
@@ -1090,7 +1090,7 @@ img.aligncenter,
 .entry-content table,
 .comment-content table {
 	border-bottom: 1px solid #ededed;
-	color: #757575;
+	color: #FF1493;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
@@ -1132,13 +1132,13 @@ footer.entry-meta {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575; /* Article Meta */
+	color: #FF1493; /* Article Meta */
 }
 .single-author .entry-meta .by-author {
 	display: none;
 }
 .mu_register h2 {
-	color: #757575;
+	color: #FF1493;
 	font-weight: normal;
 }
 
@@ -1207,7 +1207,7 @@ figure.highlight .line {
 	border-bottom: 1px solid #ededed;
 }
 .archive-meta {
-	color: #757575;
+	color: #FF1493;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
@@ -1359,7 +1359,7 @@ article.format-quote .entry-content blockquote {
 	margin: 0;
 }
 .format-status .entry-header header a {
-	color: #757575;
+	color: #FF1493;
 }
 .format-status .entry-header header a:hover {
 	color: #21759b;
@@ -1566,7 +1566,7 @@ a.comment-edit-link:hover {
 	list-style-position: inside;
 }
 .template-front-page .widget-area .widget li a {
-	color: #757575;
+	color: #FF1493;
 }
 .template-front-page .widget-area .widget li a:hover {
 	color: #21759b;
