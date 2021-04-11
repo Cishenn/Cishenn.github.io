@@ -8,3 +8,14 @@ tags: algorithm
 - 经典算法, 如MST, 单源, 多源最短路径问题
 [Github: repo](https://github.com/cishenn/algorithm)
 
+#### 记一个常见的冷门问题
+``` bash
+function fn(foo, bar){
+    ...
+}
+```
+可以经常看到 *foo* 和 *bar* 这样的变量名
+经google后, 指的是二战时米国士兵所说的
+> F*cked up beyond all repairs
+
+被引入过来, 没有什么具体含义, 仅是为了表现程序员的幽默感...

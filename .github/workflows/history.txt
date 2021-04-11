@@ -1,0 +1,234 @@
+    1  git config --global --list
+    2  git clone https://github.com/Cishenn/github.io.git
+    3  git clone https://github.com/Cishenn/Cishenn.github.io.git
+    4  git clone 
+    5  git clone 
+    6  https://github.com/Cishenn/Cishenn.github.io.git
+    7  git clone https://github.com/Cishenn/Cishenn.github.io.git
+    8  git clone https://github.com/Cishenn/Cishenn.github.io.git
+    9  git config --global http.proxy
+   10  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   11  git config --global --unset http.proxy
+   12  git config --global http.proxy 192.168.1.1:8083
+   13  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   14  git config --global http.proxy
+   15  git config --global --unset http.proxy
+   16  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   17  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   18  git config --global --unset https.proxy
+   19  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   20  exit
+   21  git clone git@github.com:Cishenn/Cishenn.github.io.git
+   22  git clone git@github.com:Cishenn/Cishenn.github.io.git
+   23  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   24  exit
+   25  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   26  git config --global unset http.proxy
+   27  git config --global --unset http.proxy
+   28  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   29  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   30  git config --global http.proxy
+   31  git clone https://github.com/Cishenn/Cishenn.github.io.git
+   32  exit
+   33  git clone https://github.com/health-assist/website
+   34   
+   35  git clone https://gitee.com/cishenn-security/docs.git
+   36  git clone https://gitee.com/cishenn-security/frontend
+   37  git clone https://gitee.com/cishenn-security/backend
+   38  git clone https://github.com/health-assist/android-app.git
+   39  git clone https://se.jisuanke.com/exam-schedular/ranshaonidemeng/arrange_examination_system.git
+   40  cd arr
+   41  cd arrange_examination_system/
+   42  dir
+   43  git clone https://se.jisuanke.com/exam-schedular/ranshaonidemeng/arrange_examination_system.git
+   44  git push origin --delete 19-
+   45  exit
+   46  git rebase --abort
+   47  git log --graph
+   48  git clone https://se.jisuanke.com/exam-
+   49  git clone jisuanke.com/exam-
+   50  git clone https://se.jisuanke.com/exam-schedular/ranshaonidemeng/arrange_examination_system.git
+   51  git branch
+   52  cd arrange_examination_system/
+   53  git branch
+   54  git pull
+   55  git checkout ywk/excel!
+   56  git checkout master
+   57  git pull
+   58  git checkout -b ywk/number
+   59  git config user.name
+   60  git config user.email
+   61  git add .
+   62  git commit -m "just push."
+   63  git push
+   64  git push --set-upstream origin ywk/number
+   65  git reset --hard HEAD^
+   66  git reset --hard HEAD^^
+   67  git reset --hard HEAD~100
+   68  git log
+   69  git config --global alias.co
+   70  git log
+   71  git log --prety=short
+   72  git log --pretty=short
+   73  git log --pretty=online
+   74  git log --pretty=oneline
+   75  git st
+   76  git config --global alias.st status
+   77  git st
+   78  git status
+   79  git add .
+   80  git commit -m "initialize project"
+   81  git push
+   82  git pull
+   83  python manage.py runserver
+   84  git checkout master
+   85  git pull
+   86  git add .
+   87  git commit -m "basical elements done"
+   88  git push
+   89  git push -u origin cishenn/article
+   90  git clone https://e.coding.net/misaka-network/dream-build-admin/frontend.git
+   91  git clone https://e.coding.net/misaka-network/dream-build-admin/frontend.git
+   92  git clone https://e.coding.net/misaka-network/dream-build-admin/frontend.git
+   93  git config user.name
+   94  ssh -T git@github.com
+   95  git config user.email
+   96  ssh-keygen -t rsa -C "740804059@qq.com"
+   97  ssh -T git@github.com
+   98  ssh -T git@github.com
+   99  ssh -T git@github.com
+  100  ssh -T git@github.com
+  101  cnpm i hexo-deployer-git --save
+  102  hexo clean
+  103  hexo generate
+  104  hexo deploy
+  105  git status
+  106  git add .
+  107  git commit -m "hexo init"
+  108  git push
+  109  git clone https://gitlab.dataee.net/treasure-hunter/hunter-admin-web.git
+  110  git clone https://gitee.com/customer-service/ccs-frontend.git
+  111  git clone 
+  112  git clone 
+  113  git clone https://github.com/Cishenn/css-global-docs.wiki.git
+  114  git add .
+  115  git commit -m "move to github from gitee"
+  116  git push
+  117  hexo s
+  118  git clone https://gitlab.dataee.net/health-card/health-card-mp.git
+  119  cd health-card-mp/
+  120  git remote add github https://github.com/Cishenn/health-card-mp.git
+  121  git push github --all
+  122  git push --mirror
+  123  git push --mirror https://github.com/Cishenn/health-card-mp.git
+  124  cd ..
+  125  git clone https://gitlab.dataee.net/we-school/we-school-official.git
+  126  cd we-school-official/
+  127  git push --mirror https://github.com/Cishenn/we-school.git
+  128  git push
+  129  git push --all
+  130  git checkout dev
+  131  git push
+  132  git push -u origin dev
+  133  git push
+  134  git push --all origin
+  135  git push
+  136  git push --all
+  137  git push -u origin dev
+  138  cd ..
+  139  git clone https://github.com/Cishenn/pbw.git
+  140  cd pbw/
+  141  git add .
+  142  git commit -m "bigboss's work'
+  143  "
+  144  git push
+  145  git reset --hard
+  146  git status
+  147  git push
+  148  hexo s
+  149  git branch
+  150  git push
+  151  git remote -v
+  152  git remote add github https://github.com/cishenn/we-school.git
+  153  git remote -v
+  154  git push github dev
+  155  git branch -a
+  156  cd ..
+  157  cd health-card-mp/
+  158  git remote -v
+  159  git push github --all
+  160  git branch -a
+  161  git remote 
+  162  git remote -v
+  163  git status
+  164  git pull
+  165  git fetch
+  166  clear
+  167  ls
+  168  git status
+  169  gitk --all
+  170  mkdir gh-pages
+  171  clear
+  172  cp -r .git gh-pages/
+  173  cd gh-pages/
+  174  ls
+  175  git checkout origin/master
+  176  clear
+  177  git branch gh-pages
+  178  git push origin gh-pages
+  179  git push origin --delete master
+  180  cd ..
+  181  clear
+  182  rm -rf gh-pages/
+  183  git status
+  184  git push -f
+  185  clear
+  186  gitk --all
+  187  git status
+  188  git submodule init
+  189  git add .
+  190  cd themes/cyanstyle/
+  191  URL=$(git remote get-url origin)
+  192  cd ../..
+  193  git submodule add $URL themes/cyanstyle
+  194  git rm --cached themes/cyanstyle
+  195  git rm themes/cyanstyle
+  196  git rm --cached -f themes/cyanstyle
+  197  git submodule add $URL themes/cyanstyle
+  198  git status
+  199  git add .
+  200  git status
+  201  cd themes/cyanstyle/
+  202  ls
+  203  git status
+  204  rm -rf .git
+  205  cd ..
+  206  cd ..
+  207  ls -a
+  208  git status
+  209  git rm .gitmodules 
+  210  git rm -f .gitmodules 
+  211  git status
+  212  git commit -m 'housekeeping'
+  213  git push
+  214  mkdir .github/workflows
+  215  mkdir -p .github/workflows
+  216  cd .github/workflows/
+  217  touch site-build.yml
+  218  notepad site-build.yml 
+  219  git add .
+  220  git commit -m 'add ci'
+  221  git push
+  222  history
+  223  history > hisory.txt
+  224  cd ../..
+  225  git rm themes/cyanstyle/
+  226  git rm --cached themes/cyanstyle/
+  227  git add themes/cyanstyle/
+  228  git status
+  229  git commit -m 'fix theme'
+  230  git push
+  231  cd .github/
+  232  cd workflows/
+  233  ls
+  234  history >history.txt
