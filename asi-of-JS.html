@@ -18,12 +18,12 @@
   <meta name="description" content="问题描述前两天一时兴起, 复习过一遍十大排序, 快排和堆排都过了, 没想到卡在冒泡上, 并且卡了两个晚上..代码: 12345678910111213141516const arr&#x3D;[1,2,8,5,1,7]function bubble(arr)&amp;#123;    for(let i&#x3D;0; i&lt;arr.length-1; ++i)&amp;#123;        let flag&#x3D;1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS自动分号插入机制">
-<meta property="og:url" content="https://cishenn.tree-digram.site/2021/04/06/asi-of-JS/index.html">
+<meta property="og:url" content="https://cishenn.tree-digram.site/asi-of-JS.html">
 <meta property="og:site_name" content="Cishenn&#39;s Page">
 <meta property="og:description" content="问题描述前两天一时兴起, 复习过一遍十大排序, 快排和堆排都过了, 没想到卡在冒泡上, 并且卡了两个晚上..代码: 12345678910111213141516const arr&#x3D;[1,2,8,5,1,7]function bubble(arr)&amp;#123;    for(let i&#x3D;0; i&lt;arr.length-1; ++i)&amp;#123;        let flag&#x3D;1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-06T14:26:08.000Z">
-<meta property="article:modified_time" content="2021-04-12T14:50:14.049Z">
+<meta property="article:modified_time" content="2021-04-13T12:36:23.786Z">
 <meta property="article:author" content="Cishenn Lee">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
@@ -42,34 +42,55 @@
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body class="home blog custom-background custom-font-enabled single-author">
   <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
+      <!--
+ * @Author: Cishenn Lee
+ * @Date: 2021-04-10 22:32:26
+ * @LastEditTime: 2021-04-13 20:30:49
+ * @FilePath: \cishenn.github.io\themes\cyanstyle\layout\_partial\header.ejs
+ * @Description: 
+-->
+<header id="masthead" class="site-header" role="banner">
     <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="Cishenn&#39;s Page" rel="home">Cishenn&#39;s Page</a>
-      </h1>
-      
-        <h2 class="site-description hitokoto"></h2>
-        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
-      
+        <h1 class="site-title">
+            <a href="/" title="Cishenn&#39;s Page" rel="home">
+                Cishenn&#39;s Page
+            </a>
+        </h1>
+        
+                <h2 class="site-description hitokoto"></h2>
+                <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js&c=k"></script>
+                
     </hgroup>
 
     <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
+        <button class="menu-toggle">菜单</button>
+        <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a>
+        <!--TODO-->
+        <div class="menu-main-container">
+            <ul id="menu-main" class="nav-menu">
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a target="_blank" rel="noopener" href="https://github.com/cishenn/cishenn.github.io">Fork Me</a></li>
-                
-                </ul>
-            </div>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/archives">
+                            Archives
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a target="_blank" rel="noopener" href="https://github.com/cishenn/cishenn.github.io">
+                            Github
+                        </a>
+                    </li>
+                    
+            </ul>
+        </div>
     </nav>
 </header>
-
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main"><article id="post-asi-of-JS" class="post-asi-of-JS post type-post status-publish format-standard hentry">
     <!---->
@@ -86,7 +107,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/2021/04/06/asi-of-JS/" data-id="cknepqbjj0001ceokfywt5jw5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/asi-of-JS.html" data-id="ckng0e4s30001f2oof13v2olv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -113,7 +134,7 @@
     <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-<a href="/2021/04/06/asi-of-JS/">
+<a href="/asi-of-JS.html">
     <time datetime="2021-04-06T14:26:08.000Z" class="entry-date">
         2021-04-06
     </time>
@@ -131,10 +152,10 @@
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/2021/04/06/sort/" rel="prev"><span class="meta-nav">←</span> 排序算法</a></span>
+        <span class="nav-previous"><a href="/sort.html" rel="prev"><span class="meta-nav">←</span> 排序算法</a></span>
     
     
-        <span class="nav-next"><a href="/2021/03/26/testpaper/" rel="next">我的个人博客 <span class="meta-nav">→</span></a></span>
+        <span class="nav-next"><a href="/testpaper.html" rel="next">我的个人博客 <span class="meta-nav">→</span></a></span>
     
 </nav><!-- .nav-single -->
 
@@ -175,23 +196,23 @@
       <ul>
         
           <li>
-            <a href="/2021/04/12/maximum-subarray/">最大子序和</a>
+            <a href="/hitokoto.html">hitokoto 一言网</a>
           </li>
         
           <li>
-            <a href="/2021/04/11/reference-sematics/">引用语义</a>
+            <a href="/maximum-subarray.html">最大子序和</a>
           </li>
         
           <li>
-            <a href="/2021/04/10/algorithm/">每天90%的精力要集中在算法上</a>
+            <a href="/reference-sematics.html">引用语义</a>
           </li>
         
           <li>
-            <a href="/2021/04/09/kindness/">温馨的晚餐~~</a>
+            <a href="/algorithm.html">每天90%的精力要集中在算法上</a>
           </li>
         
           <li>
-            <a href="/2021/04/08/curse/">curse</a>
+            <a href="/kindness.html">温馨的晚餐~~</a>
           </li>
         
       </ul>
@@ -203,7 +224,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gossip/" rel="tag">gossip</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reference/" rel="tag">reference</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gossip/" rel="tag">gossip</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </aside>
 
@@ -212,7 +233,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/gossip/" style="font-size: 20px;">gossip</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/gossip/" style="font-size: 20px;">gossip</a>
     </div>
   </aside>
 
