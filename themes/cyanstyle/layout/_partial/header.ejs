@@ -1,27 +1,43 @@
+<!--
+ * @Author: Cishenn Lee
+ * @Date: 2021-04-10 22:32:26
+ * @LastEditTime: 2021-04-13 20:30:49
+ * @FilePath: \cishenn.github.io\themes\cyanstyle\layout\_partial\header.ejs
+ * @Description: 
+-->
 <header id="masthead" class="site-header" role="banner">
     <hgroup>
-      <h1 class="site-title">
-        <a href="<%- url_for() %>" title="<%= config.title %>" rel="home"><%= config.title %></a>
-      </h1>
-      <% if (theme.subtitle){ %>
-        <h2 class="site-description">
-          <a href="<%- url_for() %>" id="subtitle"><%= theme.subtitle %></a>
-        </h2>
-      <% } else { %>
-        <h2 class="site-description hitokoto"></h2>
-        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
-      <% } %>
+        <h1 class="site-title">
+            <a href="<%- url_for() %>" title="<%= config.title %>" rel="home">
+                <%= config.title %>
+            </a>
+        </h1>
+        <% if (theme.subtitle){ %>
+            <h2 class="site-description">
+                <a href="<%- url_for() %>" id="subtitle">
+                    <%= theme.subtitle %>
+                </a>
+            </h2>
+            <% } else { %>
+                <h2 class="site-description hitokoto"></h2>
+                <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js&c=k"></script>
+                <% } %>
     </hgroup>
 
     <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
+        <button class="menu-toggle">菜单</button>
+        <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a>
+        <!--TODO-->
+        <div class="menu-main-container">
+            <ul id="menu-main" class="nav-menu">
                 <% for (var i in theme.menu){ %>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-                <% } %>
-                </ul>
-            </div>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="<%- url_for(theme.menu[i]) %>">
+                            <%= i %>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
     </nav>
 </header>
