@@ -91,6 +91,62 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-maximum-subarray" class="post-maximum-subarray post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/maximum-subarray.html">最大子序和</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/maximum-subarray.html" data-id="ckns8a4g8000hdzne2u4b6gjp" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="今日一题-最大子序和-5-3-简单"><a href="#今日一题-最大子序和-5-3-简单" class="headerlink" title="今日一题 最大子序和 5.3 简单"></a>今日一题 最大子序和 5.3 简单</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><h4 id="53-最大子序和"><a href="#53-最大子序和" class="headerlink" title="53. 最大子序和"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/">53. 最大子序和</a></h4><p>给定一个整数数组 <code>nums</code> ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。<br><strong>示例:</strong><br><strong>输入:</strong> [-2,1,-3,4,-1,2,1,-5,4],<br><strong>输出:</strong> 6<br><strong>解释:</strong> 连续子数组 [4,-1,2,1] 的和最大，为 6。<br><strong>进阶:</strong><br>如果你已经实现复杂度为 O(<em>n</em>) 的解法，尝试使用更为精妙的分治法求解。</p>
+<p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>1.该思想来自于leetcode的题解：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/solution/hua-jie-suan-fa-53-zui-da-zi-xu-he-by-guanpengchn/">https://leetcode-cn.com/problems/maximum-subarray/solution/hua-jie-suan-fa-53-zui-da-zi-xu-he-by-guanpengchn/</a><br>2.首先，使用max_n记录当前的最大值，使用sum来记录当前的子序和，当sum&lt;=0时说明sum内包括的所有的值和对于后面的子序已经没有正面效果，当sum&gt;0时说明可能对后面的子序求和有正面效果；<br>3.每次循环结尾时，比较当前的sum和max_n来获取当前的最大值并保留到max_n中，最后的max_n即为所求的最大子序和。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> max_n = nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sum &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                sum += nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                sum = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            max_n = <span class="built_in">max</span>(sum, max_n); </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max_n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="思考："><a href="#思考：" class="headerlink" title="思考："></a>思考：</h2><p>1.推荐官方题解：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/">https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/</a>，如何使用分治法求解；</p>
+<ol start="2">
+<li>0s代码，还是使用递归操作：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>], curSum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            curSum += nums[i];</span><br><span class="line">            <span class="keyword">if</span>(curSum &gt; maxSum) maxSum = curSum;</span><br><span class="line">            <span class="keyword">if</span>(curSum &lt;= <span class="number">0</span>) curSum = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    
+<a href="/maximum-subarray.html">
+    <time datetime="2021-04-12T14:39:57.000Z" class="entry-date">
+        2021-04-12
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-reference-sematics" class="post-reference-sematics post type-post status-publish format-standard hentry">
     <!---->
 
@@ -106,7 +162,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/reference-sematics.html" data-id="cknqsglyl000ki5ooad2y5t6y" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/reference-sematics.html" data-id="ckns8a4g9000kdzne4uubbxd6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -159,7 +215,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/algorithm.html" data-id="cknqsgly20001i5oo0mbs4er3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/algorithm.html" data-id="ckns8a4fv0001dzne6z7x0ias" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -215,7 +271,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/kindness.html" data-id="cknqsglye000fi5ooeymycc23" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/kindness.html" data-id="ckns8a4g7000fdzneb071ag6u" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -262,7 +318,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/curse.html" data-id="cknqsgly90008i5oocsexbpi9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/curse.html" data-id="ckns8a4g10008dzne4rqj6khf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -310,7 +366,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/hexo-github-page.html" data-id="cknqsglya0009i5oo6wn67ba5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/hexo-github-page.html" data-id="ckns8a4g20009dzne1u132t2p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -358,7 +414,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/sort.html" data-id="cknqsglyp000pi5oof3j734sz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/sort.html" data-id="ckns8a4gc000pdznef9dzf66j" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -419,7 +475,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/asi-of-JS.html" data-id="cknqsgly50003i5oo1hmk1nug" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/asi-of-JS.html" data-id="ckns8a4fy0003dzne0w0waxrr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -475,7 +531,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/testpaper.html" data-id="cknqsglyr000ri5oo4bfu8s4y" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="https://cishenn.tree-digram.site/testpaper.html" data-id="ckns8a4ge000rdznefub62wx6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -547,6 +603,10 @@
       <ul>
         
           <li>
+            <a href="/zoom-offer.html">收到Offer了! 还愿😀</a>
+          </li>
+        
+          <li>
             <a href="/revisit-zoom.html">再访ZOOM</a>
           </li>
         
@@ -562,10 +622,6 @@
             <a href="/athletic.html">教师运动会志愿者</a>
           </li>
         
-          <li>
-            <a href="/408-begin.html">美好的复习从简单的数据结构开始</a>
-          </li>
-        
       </ul>
     </div>
   </aside>
@@ -575,7 +631,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gossip/" rel="tag">gossip</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-exemption/" rel="tag">master-exemption</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/riding/" rel="tag">riding</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gossip/" rel="tag">gossip</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/master-exemption/" rel="tag">master-exemption</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/riding/" rel="tag">riding</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zoom/" rel="tag">zoom</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -584,7 +640,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/gossip/" style="font-size: 20px;">gossip</a> <a href="/tags/master-exemption/" style="font-size: 10px;">master-exemption</a> <a href="/tags/riding/" style="font-size: 15px;">riding</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/gossip/" style="font-size: 20px;">gossip</a> <a href="/tags/master-exemption/" style="font-size: 10px;">master-exemption</a> <a href="/tags/riding/" style="font-size: 15px;">riding</a> <a href="/tags/zoom/" style="font-size: 10px;">zoom</a>
     </div>
   </aside>
 
